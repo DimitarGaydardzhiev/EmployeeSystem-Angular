@@ -1,6 +1,12 @@
 <div id="container">
   <app-header></app-header>
 
+  <div class="hidden-print spinner-holder" [style.display]="objLoaderStatus ? 'block' : 'none'">
+    <div class="loading">
+      <!-- <img src="./../../../assets/loader.gif" alt="loader"> -->
+    </div>
+  </div>
+
   <div class="container">
     <router-outlet></router-outlet>
   </div>

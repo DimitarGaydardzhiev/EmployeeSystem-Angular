@@ -6,6 +6,11 @@ import { AppComponent } from './components/app/app.component';
 import { SharedModule } from './shared';
 import { routing } from './shared/app.routing';
 import { HomeComponent } from './components/home/home.component';
+import { CoreModule } from './core/core.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './core/store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './core/store/effects';
 
 
 @NgModule({
@@ -18,7 +23,14 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     SharedModule,
-    routing
+    routing,
+    CoreModule,
+
+    StoreModule.forRoot(reducers, { metaReducers }),
+
+    EffectsModule.forRoot([
+      AuthEffects,
+    ])
   ],
   // Register service providers and inject them into components
   providers: [],
