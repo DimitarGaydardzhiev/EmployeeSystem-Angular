@@ -28,7 +28,7 @@ export class BaseComponent implements OnDestroy {
     }
 
     get isAdmin(): boolean {
-        return this.userRole === 'admin'
+        return this.userRole === 'administrator'
     }
 
     get isLoggedIn(): boolean {

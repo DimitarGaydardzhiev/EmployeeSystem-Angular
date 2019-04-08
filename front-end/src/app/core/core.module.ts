@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { AuthService, ApiService } from "./services";
+import { AuthService, ApiService, DepartmentService, PositionService } from "./services";
 @NgModule({
     imports: [
         CommonModule, HttpClientModule
@@ -11,7 +11,9 @@ import { AuthService, ApiService } from "./services";
     providers: [
         HttpClient,
         AuthService,
-        ApiService
+        ApiService,
+        DepartmentService,
+        PositionService
     ]
 })
 

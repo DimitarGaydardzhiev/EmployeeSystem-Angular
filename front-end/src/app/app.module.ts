@@ -10,9 +10,11 @@ import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './core/store/reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './core/store/effects';
+import { AuthEffects, DepartmentEffects, PositionEffects } from './core/store/effects';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DepartmentManagementComponent } from './components/department/department-mgmt.component';
+import { PositionManagementComponent } from './components/position/position-mgmt.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    DepartmentManagementComponent,
+    PositionManagementComponent
   ],
   // other modules
   imports: [
@@ -34,6 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
     EffectsModule.forRoot([
       AuthEffects,
+      DepartmentEffects,
+      PositionEffects
     ])
   ],
   // Register service providers and inject them into components
