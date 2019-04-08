@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 export class AuthEffects {
     constructor(private authService: AuthService, private actions: Actions, private router: Router) { }
 
-    @Effect() login$ = this.actions
+    @Effect() login = this.actions
         .pipe(ofType(ActionTypes.LOGIN))
         .switchMap(loginModel => this.authService.login(loginModel)
             .map(res => new LoginSuccessAction(res))
@@ -24,7 +24,7 @@ export class AuthEffects {
         .do
         (action => this.router.navigate(['/home']))
 
-    @Effect() register$ = this.actions
+    @Effect() register = this.actions
         .pipe(ofType(ActionTypes.REGISTER))
         .switchMap(user => this.authService.register(user)
             .map(res => new RegisterSuccessAction(res))
@@ -33,12 +33,10 @@ export class AuthEffects {
             })
         )
 
-    // @Effect({ dispatch: false }) logOut$ = this.actions$
-    //     .ofType(ActionTypes.LOGOUT)
-    //     .do(action => {
-    //         window.location.reload()
-    //     })
-
-    // @Effect({ dispatch: false }) logAction$ = this.actions.do
-    //     (action => console.log(action))
+    @Effect({ dispatch: false }) logOut = this.actions
+        .pipe(ofType(ActionTypes.LOGOUT))
+        .do(() => {
+            this.router.navigateByUrl('/')
+            window.location.reload()
+        })
 }
