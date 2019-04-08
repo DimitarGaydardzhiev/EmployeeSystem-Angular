@@ -1,0 +1,10 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{description}}</p>
+      <a (click)="onNavigate()" class="btn btn-primary" [ngClass]="{'disabled':
+        disableLink}">{{btnTitle}}</a>
+    </div>
+  </div>
+</div>

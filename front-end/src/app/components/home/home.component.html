@@ -1,0 +1,22 @@
+<div class="row">
+  <ul class="center home-card-list">
+    <li>
+      <home-card [disableLink]="!isLoggedIn" [title]="'Positions'"
+        [btnTitle]="'Explore
+        Positions'" [description]="'Description'" [route]="'positions'"
+        (routeChange)="navigate($event)"></home-card>
+    </li>
+    <li>
+      <home-card [disableLink]="!isLoggedIn" [title]="'Departments'"
+        [btnTitle]="'Explore
+        Departments'" [description]="'Description'" [route]="'departments'"
+        (routeChange)="navigate($event)"></home-card>
+    </li>
+    <li>
+      <home-card [disableLink]="isLoggedIn" [title]="'Employees'"
+        [btnTitle]="'Explore
+        Employees'" [description]="'Description'" [route]="'employees'"
+        (routeChange)="navigate($event)"></home-card>
+    </li>
+  </ul>
+</div>

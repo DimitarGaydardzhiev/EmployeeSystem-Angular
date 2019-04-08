@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+.center {
+  display: flex;
+  margin: 0 auto;
+}
+
+.home-card-list {
+  list-style-type: none;
+}
+
+.home-card-list li {
+  width: 30%;
+  padding: 2rem;
+}
+
+.disabled {
+  pointer-events: none;
+}
