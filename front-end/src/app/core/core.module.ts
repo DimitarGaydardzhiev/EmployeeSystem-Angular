@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { AuthService, ApiService, DepartmentService, PositionService } from "./services";
+import { AuthService, ApiService, DepartmentService, PositionService, EmployeeService } from "./services";
 @NgModule({
     imports: [
         CommonModule, HttpClientModule
@@ -13,7 +13,8 @@ import { AuthService, ApiService, DepartmentService, PositionService } from "./s
         AuthService,
         ApiService,
         DepartmentService,
-        PositionService
+        PositionService,
+        EmployeeService
     ]
 })
 

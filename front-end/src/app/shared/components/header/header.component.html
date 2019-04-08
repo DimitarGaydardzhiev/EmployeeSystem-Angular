@@ -32,8 +32,8 @@
                     Employees
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Current Employees</a>
-                    <a class="dropdown-item" href="#">Former Employees</a>
+                    <a class="dropdown-item" routerLink="employees/current">Current Employees</a>
+                    <a class="dropdown-item" routerLink="employees/former">Former Employees</a>
                     <div *ngIf="isAdmin">
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Add Employee</a>
