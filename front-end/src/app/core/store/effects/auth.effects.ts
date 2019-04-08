@@ -18,6 +18,12 @@ export class AuthEffects {
             })
         )
 
+    @Effect({ dispatch: false }) successLogin$ = this
+        .actions
+        .pipe(ofType(ActionTypes.LOGIN_SUCCESS))
+        .do
+        (action => this.router.navigate(['/home']))
+
     @Effect() register$ = this.actions
         .pipe(ofType(ActionTypes.REGISTER))
         .switchMap(user => this.authService.register(user)
@@ -33,10 +39,6 @@ export class AuthEffects {
     //         window.location.reload()
     //     })
 
-    @Effect({ dispatch: false }) logAction$ = this.actions.do
-        (action => console.log(action))
-
-    // @Effect({ dispatch: false }) loginSuccess$ = this.actions$
-    //     .ofType(ActionTypes.LOGIN_SUCCESS)
-    //     .do(action => this.router.navigate(['./home']))
+    // @Effect({ dispatch: false }) logAction$ = this.actions.do
+    //     (action => console.log(action))
 }

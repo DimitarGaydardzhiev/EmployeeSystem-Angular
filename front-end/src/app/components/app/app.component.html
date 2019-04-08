@@ -1,9 +1,9 @@
 <div id="container">
-  <app-header></app-header>
+  <app-header [isLogged]="isLoggedIn" [isAdmin]="isAdmin"></app-header>
 
-  <div class="hidden-print spinner-holder" [style.display]="objLoaderStatus ? 'block' : 'none'">
+  <div class="hidden-print spinner-holder" [style.display]="objLoaderStatus ?
+    'block' : 'none'">
     <div class="loading">
-      <!-- <img src="./../../../assets/loader.gif" alt="loader"> -->
     </div>
   </div>
 

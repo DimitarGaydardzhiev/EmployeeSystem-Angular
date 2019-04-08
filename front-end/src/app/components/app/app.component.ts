@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { State, getLoaderStatus } from '../../core/store/reducers';
 import { Store } from '@ngrx/store';
 import { BaseComponent } from '../../shared/components/base.component';
-import 'rxjs/Rx';
+import 'rxjs-compat';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,8 @@ import 'rxjs/Rx';
 export class AppComponent extends BaseComponent {
   objLoaderStatus: boolean
 
-  constructor(private store: Store<State>) {
-    super()
+  constructor(public store: Store<State>) {
+    super(store)
 
     this.store.select(getLoaderStatus).takeWhile(data => this.isAlive).subscribe(state => {
       this.objLoaderStatus = state

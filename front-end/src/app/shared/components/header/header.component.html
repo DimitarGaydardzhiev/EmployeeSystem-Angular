@@ -2,8 +2,10 @@
     <a class="navbar-brand" routerLink="home">
         <img src="../../../../favicon.ico" alt="">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -13,7 +15,8 @@
                 <a class="nav-link" routerLink="home">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                    role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Administration
                 </a>
@@ -23,41 +26,53 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                    role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Employees
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Current Employees</a>
                     <a class="dropdown-item" href="#">Former Employees</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Add Employee</a>
+                    <div *ngIf="isAdmin">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Add Employee</a>
+                    </div>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <li class="nav-item dropdown" *ngIf="isLogged">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                    role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Requests
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">My Requests</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">New Request</a>
-                    <a class="dropdown-item" href="#">Pending Requests</a>
-                    <a class="dropdown-item" href="#">Approved Requests</a>
+                    <div *ngIf="isAdmin">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">New Request</a>
+                        <a class="dropdown-item" href="#">Pending Requests</a>
+                        <a class="dropdown-item" href="#">Approved Requests</a>
+                    </div>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <li class="nav-item dropdown" *ngIf="isLogged">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                    role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Projects
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">All Projects</a>
                     <a class="dropdown-item" href="#">My Projects</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Add Projects</a>
+                    <div *ngIf="isAdmin">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Add Projects</a>
+                    </div>
                 </div>
+            </li>
+            <li class="nav-item" *ngIf="!isLogged">
+                <button class="btn btn-info" (click)="openLoginForm()">Login</button>
             </li>
         </ul>
     </div>

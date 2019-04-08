@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core'
 })
 
 export class HeaderComponent {
+    @Input() isLogged: boolean
+    @Input() isAdmin: boolean
 
+    constructor(private router: Router) { }
+
+    openLoginForm() {
+        this.router.navigateByUrl('/login')
+    }
 }

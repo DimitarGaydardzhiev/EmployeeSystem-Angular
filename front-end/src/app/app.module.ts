@@ -11,13 +11,16 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './core/store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './core/store/effects';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   // components, directives and pipes
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   // other modules
   imports: [
@@ -25,6 +28,7 @@ import { AuthEffects } from './core/store/effects';
     SharedModule,
     routing,
     CoreModule,
+    ReactiveFormsModule,
 
     StoreModule.forRoot(reducers, { metaReducers }),
 
