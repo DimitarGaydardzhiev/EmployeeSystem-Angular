@@ -1,6 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Effect, Actions, ofType } from "@ngrx/effects";
-import { ActionTypes, GetMyRequestsActionSuccess, GetMyRequestsActionFail } from "../actions/request.actions";
+import {
+  ActionTypes, GetMyRequestsActionSuccess, GetMyRequestsActionFail,
+  GetApprovedRequestsActionSuccess, GetApprovedRequestsActionFail
+} from "../actions/request.actions";
 import { Observable } from "rxjs/Observable";
 import { RequestService } from "../../services";
 
@@ -14,6 +17,15 @@ export class RequestEffects {
       .map(res => new GetMyRequestsActionSuccess(res))
       .catch((err) => {
         return Observable.of(new GetMyRequestsActionFail(err));
+      })
+    )
+
+  @Effect() getNewRequests = this.actions
+    .pipe(ofType(ActionTypes.GET_APPROVED_REQUESTS))
+    .switchMap(() => this.service.approvedRequests()
+      .map(res => new GetApprovedRequestsActionSuccess(res))
+      .catch((err) => {
+        return Observable.of(new GetApprovedRequestsActionFail(err));
       })
     )
 }

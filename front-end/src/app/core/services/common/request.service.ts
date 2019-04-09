@@ -13,4 +13,16 @@ export class RequestService {
 
     return this.apiService.get(resourceUrl);
   }
+
+  approvedRequests(): Observable<any> {
+    const resourceUrl = `${this.object}/Approved`
+
+    return this.apiService.get(resourceUrl);
+  }
+
+  pendingRequests(): Observable<any> {
+    const resourceUrl = `${this.object}/Pending`
+
+    return this.apiService.get(resourceUrl);
+  }
 }

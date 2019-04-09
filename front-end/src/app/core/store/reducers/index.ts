@@ -52,6 +52,7 @@ export const getFormerEmployees = createSelector(getEmployeesState, Employees.ge
 
 export const getRequestsState = createFeatureSelector<Requests.State>('requests')
 export const getMyRequests = createSelector(getRequestsState, Requests.getMyRequests)
+export const getApprovedRequests = createSelector(getRequestsState, Requests.getApprovedRequests)
 
 export const getRolesState = createFeatureSelector<Roles.State>('roles')
 export const getAllRoles = createSelector(getRolesState, Roles.getAllRoles)
