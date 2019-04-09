@@ -8,7 +8,7 @@ import { DepartmentService } from "../../services";
 export class DepartmentEffects {
   constructor(private service: DepartmentService, private actions: Actions) { }
 
-  @Effect() getAllDepartments$ = this.actions
+  @Effect() getAllDepartments = this.actions
     .pipe(ofType(ActionTypes.GET_ALL_DEPARTMENTS))
     .switchMap(() => this.service.all()
       .map(res => new GetAllDepartmentsActionSuccess(res))

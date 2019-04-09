@@ -8,7 +8,7 @@ import { PositionService } from "../../services";
 export class PositionEffects {
   constructor(private service: PositionService, private actions: Actions) { }
 
-  @Effect() getAllPositions$ = this.actions
+  @Effect() getAllPositions = this.actions
     .pipe(ofType(ActionTypes.GET_ALL_POSITIONS))
     .switchMap(() => this.service.all()
       .map(res => new GetAllPositionsActionSuccess(res))

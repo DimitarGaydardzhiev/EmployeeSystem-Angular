@@ -12,6 +12,7 @@ export class BaseComponent implements OnDestroy {
     userRole: string
     isLogged: boolean
     email: string
+    userId: number
 
     ngOnDestroy(): void {
         this.isAlive = false
@@ -25,6 +26,7 @@ export class BaseComponent implements OnDestroy {
                     this.userRole = auth.user.role
                     this.isLogged = auth.loggedIn
                     this.email = auth.user.email
+                    this.userId = Number(auth.user.id)
                 }
             })
     }

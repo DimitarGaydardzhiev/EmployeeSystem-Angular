@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DepartmentManagementComponent } from './components/department/department-mgmt.component';
 import { PositionManagementComponent } from './components/position/position-mgmt.component';
 import { EmployeeManagementComponent } from './components/employee/employee-mgmt.component';
+import { RequestEffects } from './core/store/effects/request.effects';
+import { MyRequestManagementComponent } from './components/request/my-request-mgmt.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { EmployeeManagementComponent } from './components/employee/employee-mgmt
     LoginComponent,
     DepartmentManagementComponent,
     PositionManagementComponent,
-    EmployeeManagementComponent
+    EmployeeManagementComponent,
+    MyRequestManagementComponent
   ],
   // other modules
   imports: [
@@ -42,7 +45,8 @@ import { EmployeeManagementComponent } from './components/employee/employee-mgmt
       AuthEffects,
       DepartmentEffects,
       PositionEffects,
-      EmployeeEffects
+      EmployeeEffects,
+      RequestEffects
     ])
   ],
   // Register service providers and inject them into components

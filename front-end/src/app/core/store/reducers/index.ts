@@ -6,6 +6,7 @@ import * as Auth from './auth.reducers'
 import * as Departments from './department.reducers'
 import * as Positions from './position.reducers'
 import * as Employees from './employee.reducers'
+import * as Requests from './request.reducers'
 
 export interface State {
     auth: Auth.State
@@ -13,6 +14,7 @@ export interface State {
     departments: Departments.State
     positions: Positions.State
     employees: Employees.State
+    requests: Requests.State
 }
 
 export const reducers = {
@@ -20,7 +22,8 @@ export const reducers = {
     loader: Loader.reducer,
     departments: Departments.reducer,
     positions: Positions.reducer,
-    employees: Employees.reducer
+    employees: Employees.reducer,
+    requests: Requests.reducer
 }
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -43,4 +46,7 @@ export const getPositions = createSelector(getPositionsState, Positions.getPosit
 export const getEmployeesState = createFeatureSelector<Employees.State>('employees')
 export const getCurrentEmployees = createSelector(getEmployeesState, Employees.getCurrentEmployees)
 export const getFormerEmployees = createSelector(getEmployeesState, Employees.getFormerEmployees)
+
+export const getRequestsState = createFeatureSelector<Requests.State>('requests')
+export const getMyRequests = createSelector(getRequestsState, Requests.getMyRequests)
 
