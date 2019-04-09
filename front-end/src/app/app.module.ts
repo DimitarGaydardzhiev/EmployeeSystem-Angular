@@ -12,12 +12,13 @@ import { reducers, metaReducers } from './core/store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects, DepartmentEffects, PositionEffects, EmployeeEffects } from './core/store/effects';
 import { LoginComponent } from './components/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DepartmentManagementComponent } from './components/department/department-mgmt.component';
 import { PositionManagementComponent } from './components/position/position-mgmt.component';
 import { EmployeeManagementComponent } from './components/employee/employee-mgmt.component';
 import { RequestEffects } from './core/store/effects/request.effects';
 import { MyRequestManagementComponent } from './components/request/my-request-mgmt.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MyRequestManagementComponent } from './components/request/my-request-mg
     DepartmentManagementComponent,
     PositionManagementComponent,
     EmployeeManagementComponent,
-    MyRequestManagementComponent
+    MyRequestManagementComponent,
+    EmployeeComponent
   ],
   // other modules
   imports: [
@@ -38,6 +40,7 @@ import { MyRequestManagementComponent } from './components/request/my-request-mg
     routing,
     CoreModule,
     ReactiveFormsModule,
+    FormsModule,
 
     StoreModule.forRoot(reducers, { metaReducers }),
 

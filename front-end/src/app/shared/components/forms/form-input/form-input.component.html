@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label *ngIf="inputLabel" [attr.for]="id">
+    {{inputLabel}}
+  </label>
+  <input class="form-control" [type]="inputType"
+    [(ngModel)]="value" [maxlength]="maxLength" [minlength]="minLength"
+    [placeholder]="placeHolder" [id]="id" />
+</div>

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h5>Add New Employee</h5>
+    <hr>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <data-form (submitForm)="onSubmit($event)">
+      <div>
+        <form-input [inputType]="'text'" [(ngModel)]="entity.firstName"
+          [inputLabel]="'First Name'" [id]="'firstName'" ngDefaultControl></form-input>
+      </div>
+      <div>
+        <form-input [inputType]="'text'"  [(ngModel)]="entity.lastName"
+          [inputLabel]="'Last Name'" [id]="'lastName'" ngDefaultControl></form-input>
+      </div>
+      <div>
+        <form-input [inputType]="'text'"  [(ngModel)]="entity.email"
+          [inputLabel]="'Email'" [id]="'email'" ngDefaultControl></form-input>
+      </div>
+      <div>
+        <form-input [inputType]="'password'"  [(ngModel)]="entity.password"
+          [inputLabel]="'Password'" [id]="'password'" ngDefaultControl></form-input>
+      </div>
+      <div>
+        <form-input [inputType]="'password'"  [(ngModel)]="entity.confirmPassword"
+          [inputLabel]="'Confirm Password'" [id]="'confirmPassword'" ngDefaultControl></form-input>
+      </div>
+    </data-form>
+  </div>
+  <div class="col-md-4"></div>
+</div>

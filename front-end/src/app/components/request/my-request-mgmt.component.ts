@@ -17,7 +17,6 @@ export class MyRequestManagementComponent extends BaseComponent implements OnIni
     this.store.select(getMyRequests).takeWhile(data => this.isAlive).subscribe(state => {
       if (state && state.length) {
         this.requests = state
-        console.log(state)
       }
     })
   }
