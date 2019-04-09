@@ -6,6 +6,7 @@ import { HomeCardComponent } from "./home-card/home-card.component";
 import { DataFormComponent } from "./forms/form/data-form.component";
 import { FormBaseComponent } from "./forms/form-base.component";
 import { FormInputComponent } from "./forms/form-input/form-input.component";
+import { FormTextareaComponent } from "./forms/form-textarea/form-textarea.component";
 
 
 export const sharedComponents = [
@@ -16,5 +17,6 @@ export const sharedComponents = [
     HomeCardComponent,
     DataFormComponent,
     FormBaseComponent,
-    FormInputComponent
+    FormInputComponent,
+    FormTextareaComponent
 ]

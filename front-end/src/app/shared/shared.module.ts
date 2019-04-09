@@ -3,18 +3,21 @@ import { sharedComponents } from './components'
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        NgbModule.forRoot()
     ],
     declarations: [
         ...sharedComponents
     ],
     exports: [
-        ...sharedComponents,
+        NgbModule,
+        ...sharedComponents
     ],
     providers: []
 })

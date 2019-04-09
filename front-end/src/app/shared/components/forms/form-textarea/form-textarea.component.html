@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label *ngIf="inputLabel" [attr.for]="id">
+    {{inputLabel}}
+  </label>
+  <textarea
+    class='form-control'
+    [placeholder]="placeHolder" [id]="id"
+    [cols]='cols'
+    [rows]='rows'
+    [(ngModel)]="value">
+  </textarea>
+</div>

@@ -19,4 +19,10 @@ export class EmployeeService {
 
     return this.apiService.get(resourceUrl);
   }
+
+  allRoles(): Observable<any> {
+    const resourceUrl = `${this.object}/GetRoles`
+
+    return this.apiService.get(resourceUrl);
+  }
 }

@@ -77,7 +77,7 @@ namespace EmployeeSystem.Controllers
 
         [HttpPost]
         [Authorize(Roles = "administrator")]
-        public async Task<IActionResult> Register([FromBody] EmployeeDto model, string returnUrl = null)
+        public async Task<IActionResult> Save([FromBody] EmployeeDto model, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {

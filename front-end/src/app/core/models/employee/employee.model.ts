@@ -6,4 +6,8 @@ export class Employee extends BaseModel {
   email: string
   password: string
   confirmPassword: string
+  roleId: string
+  positionId: number
+  departmentId: number
+  description: string
 }

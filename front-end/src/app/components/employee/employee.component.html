@@ -5,26 +5,61 @@
   </div>
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <data-form (submitForm)="onSubmit($event)">
+    <data-form (submitForm)="onSubmit()">
       <div>
         <form-input [inputType]="'text'" [(ngModel)]="entity.firstName"
           [inputLabel]="'First Name'" [id]="'firstName'" ngDefaultControl></form-input>
       </div>
       <div>
-        <form-input [inputType]="'text'"  [(ngModel)]="entity.lastName"
+        <form-input [inputType]="'text'" [(ngModel)]="entity.lastName"
           [inputLabel]="'Last Name'" [id]="'lastName'" ngDefaultControl></form-input>
       </div>
       <div>
-        <form-input [inputType]="'text'"  [(ngModel)]="entity.email"
+        <form-input [inputType]="'text'" [(ngModel)]="entity.email"
           [inputLabel]="'Email'" [id]="'email'" ngDefaultControl></form-input>
       </div>
       <div>
-        <form-input [inputType]="'password'"  [(ngModel)]="entity.password"
+        <form-input [inputType]="'password'" [(ngModel)]="entity.password"
           [inputLabel]="'Password'" [id]="'password'" ngDefaultControl></form-input>
       </div>
       <div>
-        <form-input [inputType]="'password'"  [(ngModel)]="entity.confirmPassword"
-          [inputLabel]="'Confirm Password'" [id]="'confirmPassword'" ngDefaultControl></form-input>
+        <form-input [inputType]="'password'"
+          [(ngModel)]="entity.confirmPassword"
+          [inputLabel]="'Confirm Password'" [id]="'confirmPassword'"
+          ngDefaultControl></form-input>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>Role</label>
+          <select class="form-control" [(ngModel)]="entity.roleId">
+            <option class="form-control" *ngFor="let r of roles"
+              [ngValue]="r.id">{{r.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>Position</label>
+          <select class="form-control" [(ngModel)]="entity.positionId">
+            <option class="form-control" *ngFor="let p of positions"
+              [ngValue]="p.id">{{p.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>Department</label>
+          <select class="form-control" [(ngModel)]="entity.departmentid">
+            <option class="form-control" *ngFor="let d of departments"
+              [ngValue]="d.id">{{d.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <form-textarea [(ngModel)]="entity.description"
+          [inputLabel]="'Personal Description'" [id]="'description'" [cols]='5'
+          [rows]='5'
+          ngDefaultControl></form-textarea>
       </div>
     </data-form>
   </div>

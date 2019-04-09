@@ -10,7 +10,7 @@ import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './core/store/reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects, DepartmentEffects, PositionEffects, EmployeeEffects } from './core/store/effects';
+import { AuthEffects, DepartmentEffects, PositionEffects, EmployeeEffects, RoleEffects, SaveEffects } from './core/store/effects';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DepartmentManagementComponent } from './components/department/department-mgmt.component';
@@ -19,6 +19,7 @@ import { EmployeeManagementComponent } from './components/employee/employee-mgmt
 import { RequestEffects } from './core/store/effects/request.effects';
 import { MyRequestManagementComponent } from './components/request/my-request-mgmt.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
     CoreModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
 
     StoreModule.forRoot(reducers, { metaReducers }),
 
@@ -49,7 +51,9 @@ import { EmployeeComponent } from './components/employee/employee.component';
       DepartmentEffects,
       PositionEffects,
       EmployeeEffects,
-      RequestEffects
+      RequestEffects,
+      RoleEffects,
+      SaveEffects
     ])
   ],
   // Register service providers and inject them into components
