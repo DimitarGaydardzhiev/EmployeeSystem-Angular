@@ -36,7 +36,7 @@ export class AuthEffects {
     @Effect({ dispatch: false }) logOut = this.actions
         .pipe(ofType(ActionTypes.LOGOUT))
         .do(() => {
-            this.router.navigateByUrl('/')
-            window.location.reload()
+            this.router.navigateByUrl('/home')
+                .then(() => window.location.reload())
         })
 }
