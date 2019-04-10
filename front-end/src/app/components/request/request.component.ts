@@ -30,7 +30,7 @@ export class RequestComponent extends BaseComponent implements OnInit {
       new Date(this.entity.from.year, this.entity.from.month, this.entity.from.day);
     this.entity.to =
       new Date(this.entity.to.year, this.entity.to.month, this.entity.to.day);
-    debugger
+
     this.store.dispatch(new SaveAction(this.entity))
   }
 

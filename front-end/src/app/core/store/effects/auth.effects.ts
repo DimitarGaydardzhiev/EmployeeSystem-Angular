@@ -4,16 +4,21 @@ import { ActionTypes, LoginSuccessAction, LoginFailAction, RegisterSuccessAction
 import { AuthService } from "../../services/common/auth.service";
 import { Observable } from "rxjs/Observable";
 import { Router } from "@angular/router";
+import { ToastrService } from "../../services";
 
 @Injectable()
 export class AuthEffects {
-    constructor(private authService: AuthService, private actions: Actions, private router: Router) { }
+    constructor(private authService: AuthService, private actions: Actions, private router: Router, private toastr: ToastrService) { }
 
     @Effect() login = this.actions
         .pipe(ofType(ActionTypes.LOGIN))
         .switchMap(loginModel => this.authService.login(loginModel)
-            .map(res => new LoginSuccessAction(res))
+            .map(res => {
+                this.toastr.success('Login Successful!')
+                return new LoginSuccessAction(res)
+            })
             .catch((err) => {
+                this.toastr.error(err.error)
                 return Observable.of(new LoginFailAction(err));
             })
         )
@@ -29,6 +34,7 @@ export class AuthEffects {
         .switchMap(user => this.authService.register(user)
             .map(res => new RegisterSuccessAction(res))
             .catch((err) => {
+                this.toastr.error(err.error)
                 return Observable.of(new RegisterFailAction(err));
             })
         )

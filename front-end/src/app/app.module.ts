@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApprovedRequestManagementComponent } from './components/request/approved/approved-request-mgmt.component';
 import { PendingRequestManagementComponent } from './components/request/pending/pending-request-mgmt.component';
 import { RequestComponent } from './components/request/request.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { RequestComponent } from './components/request/request.component';
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
+    ToastrModule.forRoot(),
 
     StoreModule.forRoot(reducers, { metaReducers }),
 

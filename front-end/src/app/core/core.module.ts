@@ -1,10 +1,16 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { AuthService, ApiService, DepartmentService, PositionService, EmployeeService, RequestService, SaveService } from "./services";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {
+    AuthService, ApiService, DepartmentService, PositionService,
+    EmployeeService, RequestService, SaveService, ToastrService
+} from "./services";
 @NgModule({
     imports: [
-        CommonModule, HttpClientModule
+        CommonModule,
+        HttpClientModule,
+        BrowserAnimationsModule
     ],
     declarations: [
     ],
@@ -16,7 +22,8 @@ import { AuthService, ApiService, DepartmentService, PositionService, EmployeeSe
         PositionService,
         EmployeeService,
         RequestService,
-        SaveService
+        SaveService,
+        ToastrService
     ]
 })
 
