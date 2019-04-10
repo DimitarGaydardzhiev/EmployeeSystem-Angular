@@ -8,6 +8,8 @@ import { BehaviorSubject } from 'rxjs-compat';
 
 export class RequestTableComponent {
   @Input() isAdmin: boolean
+  @Input() btnLabel: string = ''
+  @Input() btnClass: string = ''
   // initialize a private variable _data, it's a BehaviorSubject
   private _requests = new BehaviorSubject<any[]>([]);
 
