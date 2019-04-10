@@ -17,9 +17,11 @@ import { DepartmentManagementComponent } from './components/department/departmen
 import { PositionManagementComponent } from './components/position/position-mgmt.component';
 import { EmployeeManagementComponent } from './components/employee/employee-mgmt.component';
 import { RequestEffects } from './core/store/effects/request.effects';
-import { MyRequestManagementComponent } from './components/request/my-request-mgmt.component';
+import { MyRequestManagementComponent } from './components/request/my/my-request-mgmt.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApprovedRequestManagementComponent } from './components/request/approved/approved-request-mgmt.component';
+import { PendingRequestManagementComponent } from './components/request/pending/pending-request-mgmt.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PositionManagementComponent,
     EmployeeManagementComponent,
     MyRequestManagementComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    ApprovedRequestManagementComponent,
+    PendingRequestManagementComponent
   ],
   // other modules
   imports: [

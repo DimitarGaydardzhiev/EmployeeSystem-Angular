@@ -7,7 +7,11 @@ export const ActionTypes = {
 
     GET_APPROVED_REQUESTS: "GET_APPROVED_REQUESTS",
     GET_APPROVED_REQUESTS_SUCCESS: "GET_APPROVED_REQUESTS_SUCCESS",
-    GET_APPROVED_REQUESTS_FAIL: "GET_APPROVED_REQUESTS_FAIL"
+    GET_APPROVED_REQUESTS_FAIL: "GET_APPROVED_REQUESTS_FAIL",
+
+    GET_PENDING_REQUESTS: "GET_PENDING_REQUESTS",
+    GET_PENDING_REQUESTS_SUCCESS: "GET_PENDING_REQUESTS_SUCCESS",
+    GET_PENDING_REQUESTS_FAIL: "GET_PENDING_REQUESTS_FAIL"
 }
 
 export class GetMyRequestsAction implements Action {
@@ -31,7 +35,7 @@ export class GetMyRequestsActionFail implements Action {
 export class GetApprovedRequestsAction implements Action {
     type = ActionTypes.GET_APPROVED_REQUESTS
 
-    constructor(public payload: number) { }
+    constructor(public payload: any = null) { }
 }
 
 export class GetApprovedRequestsActionSuccess implements Action {
@@ -46,6 +50,24 @@ export class GetApprovedRequestsActionFail implements Action {
     constructor(public payload: any) { }
 }
 
+export class GetPendingRequestsAction implements Action {
+    type = ActionTypes.GET_PENDING_REQUESTS
+
+    constructor(public payload: any = null) { }
+}
+
+export class GetPendingRequestsActionSuccess implements Action {
+    type = ActionTypes.GET_PENDING_REQUESTS_SUCCESS
+
+    constructor(public payload: Request[]) { }
+}
+
+export class GetPendingRequestsActionFail implements Action {
+    type = ActionTypes.GET_PENDING_REQUESTS_FAIL
+
+    constructor(public payload: any) { }
+}
+
 export type Actions
     = GetMyRequestsAction
     | GetMyRequestsActionSuccess
@@ -54,3 +76,7 @@ export type Actions
     | GetApprovedRequestsAction
     | GetApprovedRequestsActionSuccess
     | GetApprovedRequestsActionFail
+
+    | GetPendingRequestsAction
+    | GetPendingRequestsActionSuccess
+    | GetPendingRequestsActionFail

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Effect, Actions, ofType } from "@ngrx/effects";
 import {
   ActionTypes, GetMyRequestsActionSuccess, GetMyRequestsActionFail,
-  GetApprovedRequestsActionSuccess, GetApprovedRequestsActionFail
+  GetApprovedRequestsActionSuccess, GetApprovedRequestsActionFail, GetPendingRequestsActionSuccess, GetPendingRequestsActionFail
 } from "../actions/request.actions";
 import { Observable } from "rxjs/Observable";
 import { RequestService } from "../../services";
@@ -28,4 +28,13 @@ export class RequestEffects {
         return Observable.of(new GetApprovedRequestsActionFail(err));
       })
     )
+
+    @Effect() getPendingRequests = this.actions
+      .pipe(ofType(ActionTypes.GET_PENDING_REQUESTS))
+      .switchMap(() => this.service.pendingRequests()
+        .map(res => new GetPendingRequestsActionSuccess(res))
+        .catch((err) => {
+          return Observable.of(new GetPendingRequestsActionFail(err));
+        })
+      )
 }
