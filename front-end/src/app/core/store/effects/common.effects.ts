@@ -1,15 +1,14 @@
 import { Injectable } from "@angular/core";
 import { Effect, Actions, ofType } from "@ngrx/effects";
-import { ActionTypes, SaveActionSuccess, SaveActionFail, SaveAction } from "../actions/save.actions";
+import { ActionTypes, SaveActionSuccess, SaveActionFail, SaveAction } from "../actions/common.actions";
 import { Observable } from "rxjs/Observable";
-import { SaveService } from "../../services/common/save.service";
+import { CommonService } from "../../services/common/common.service";
 import { ToastrService } from "../../services";
 import { Router } from "@angular/router";
-import { routerNgProbeToken } from "@angular/router/src/router_module";
 
 @Injectable()
 export class SaveEffects {
-  constructor(private service: SaveService, private actions: Actions, private toastr: ToastrService, private router: Router) { }
+  constructor(private service: CommonService, private actions: Actions, private toastr: ToastrService, private router: Router) { }
 
   @Effect() save = this.actions
     .pipe(ofType<SaveAction>(ActionTypes.SAVE))

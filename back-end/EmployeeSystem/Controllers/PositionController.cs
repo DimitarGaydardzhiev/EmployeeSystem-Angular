@@ -2,6 +2,7 @@
 using DTOs.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using NToastNotify;
 using ServiceLayer.Interfaces;
 using ServiceLayer.Utils;
@@ -41,6 +42,22 @@ namespace EmployeeSystem.Controllers
         public IActionResult Edit(PositionDto model)
         {
             return View("Add", model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "administrator")]
+        [Route("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var model = service.GetById(id);
+                return Ok(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]

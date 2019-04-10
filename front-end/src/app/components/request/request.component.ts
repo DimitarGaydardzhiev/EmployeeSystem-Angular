@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { State, getRequestTypes } from '../../core/store/reducers/';
 import { BaseModel } from '../../core/models';
 import { BaseComponent } from '../../shared/components/base.component';
-import { SaveAction } from '../../core/store/actions/save.actions';
+import { SaveAction } from '../../core/store/actions/common.actions';
 
 @Component({
   templateUrl: './request.component.html',

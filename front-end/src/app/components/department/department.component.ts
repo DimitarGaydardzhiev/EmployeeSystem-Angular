@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Department } from '../../core/models/department/department.model';
 import { Store } from '@ngrx/store';
 import { State } from '../../core/store/reducers/';
-import { SaveAction } from '../../core/store/actions/save.actions';
+import { SaveAction } from '../../core/store/actions/common.actions';
 
 @Component({
   templateUrl: './department.component.html',

@@ -10,5 +10,7 @@ namespace ServiceLayer.Interfaces
         void Save(PositionDto model);
 
         void Delete(int id);
+
+        PositionDto GetById(int id);
     }
 }

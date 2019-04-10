@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'departments', component: DepartmentManagementComponent },
     { path: 'positions', component: PositionManagementComponent },
     { path: 'positions/add', component: PositionComponent },
+    { path: 'positions/:id', component: PositionComponent },
     { path: 'employees/current', component: EmployeeManagementComponent },
     { path: 'employees/former', component: EmployeeManagementComponent },
     { path: 'requests/my', component: MyRequestManagementComponent },

@@ -9,5 +9,6 @@
         public const string ThereIsAlreadyRequestForTheseDatesMessage = "There is already a request for these dates";
         public const string CanNotEditAnotherUserRequest = "You can not edit another user requests";
         public const string UnauthorizedAccess = "Unauthorized Access";
+        public const string ObjectNotFound = "Object Not Found";
     }
 }

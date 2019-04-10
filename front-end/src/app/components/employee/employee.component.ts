@@ -9,7 +9,7 @@ import { Position } from '../../core/models/position/position.model';
 import { GetAllPositionsAction } from '../../core/store/actions/position.actions';
 import { Department } from '../../core/models/department/department.model';
 import { GetAllDepartmentsAction } from '../../core/store/actions/department.actions';
-import { SaveAction } from '../../core/store/actions/save.actions';
+import { SaveAction } from '../../core/store/actions/common.actions';
 
 @Component({
   templateUrl: './employee.component.html',

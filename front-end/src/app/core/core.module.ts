@@ -4,7 +4,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {
     AuthService, ApiService, DepartmentService, PositionService,
-    EmployeeService, RequestService, SaveService, ToastrService
+    EmployeeService, RequestService, CommonService, ToastrService
 } from "./services";
 @NgModule({
     imports: [
@@ -22,7 +22,7 @@ import {
         PositionService,
         EmployeeService,
         RequestService,
-        SaveService,
+        CommonService,
         ToastrService
     ]
 })

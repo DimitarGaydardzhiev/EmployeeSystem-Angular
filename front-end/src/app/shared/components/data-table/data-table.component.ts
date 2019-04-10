@@ -1,5 +1,6 @@
 import { Component, Input, AfterViewInit, OnInit, OnChanges, SimpleChange } from '@angular/core'
 import { BehaviorSubject } from 'rxjs-compat';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'data-table',
@@ -13,6 +14,9 @@ export class DataTableComponent {
   private _data = new BehaviorSubject<any[]>([]);
   filteredData: any[]
   objectKeys = Object.keys
+  constructor(private router: Router) {
+
+  }
 
   // change data to use getter and setter
   @Input()
@@ -28,5 +32,10 @@ export class DataTableComponent {
 
   isVisible(key: string): boolean {
     return Object.keys(this.columns).includes(key)
+  }
+
+  edit(id: number): void {
+    const editUrl = `${this.router.url}/${id}`
+    this.router.navigateByUrl(editUrl)
   }
 }

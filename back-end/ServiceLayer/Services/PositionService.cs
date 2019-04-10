@@ -63,5 +63,20 @@ namespace ServiceLayer.Services
 
             base.Delete(id);
         }
+
+        public PositionDto GetById(int id)
+        {
+            var entity = this.repository.Find(id);
+            if (entity == null)
+            {
+                throw new Exception(ErrorMessages.ObjectNotFound);
+            }
+
+            return new PositionDto()
+            {
+                Id = entity.Id,
+                Name = entity.Name
+            };
+        }
     }
 }

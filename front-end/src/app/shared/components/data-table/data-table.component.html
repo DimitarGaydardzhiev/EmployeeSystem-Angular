@@ -12,7 +12,7 @@
         <span *ngIf="isVisible(key)">{{item[key]}}</span>
       </td>
       <td *ngIf="isAdmin">
-        <button class="btn btn-warning">Edit</button>
+        <button class="btn btn-warning" (click)="edit(item.id)">Edit</button>
       </td>
       <td *ngIf="isAdmin">
         <button class="btn btn-danger">Delete</button>
