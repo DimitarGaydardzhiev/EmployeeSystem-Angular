@@ -53,7 +53,7 @@ namespace EmployeeSystem.Controllers
                 try
                 {
                     service.Save(model);
-                    return Ok();
+                    return Ok("departments");
                 }
                 catch (Exception e)
                 {

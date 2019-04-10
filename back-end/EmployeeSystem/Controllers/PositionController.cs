@@ -52,7 +52,7 @@ namespace EmployeeSystem.Controllers
                 try
                 {
                     service.Save(model);
-                    return Ok();
+                    return Ok("positions");
                 }
                 catch (Exception e)
                 {

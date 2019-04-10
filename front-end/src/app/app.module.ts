@@ -23,6 +23,8 @@ import { ApprovedRequestManagementComponent } from './components/request/approve
 import { PendingRequestManagementComponent } from './components/request/pending/pending-request-mgmt.component';
 import { RequestComponent } from './components/request/request.component';
 import { ToastrModule } from 'ngx-toastr';
+import { DepartmentComponent } from './components/department/department.component';
+import { PositionComponent } from './components/position/position.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { ToastrModule } from 'ngx-toastr';
     EmployeeComponent,
     ApprovedRequestManagementComponent,
     PendingRequestManagementComponent,
-    RequestComponent
+    RequestComponent,
+    DepartmentComponent,
+    PositionComponent
   ],
   // other modules
   imports: [

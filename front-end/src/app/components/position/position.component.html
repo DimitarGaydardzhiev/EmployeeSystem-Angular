@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h5>Add New Position</h5>
+    <hr>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <data-form (submitForm)="onSubmit()">
+      <div>
+        <form-input [inputType]="'text'" [(ngModel)]="entity.name"
+          [inputLabel]="'Name'" [id]="'name'" ngDefaultControl></form-input>
+      </div>
+    </data-form>
+  </div>
+  <div class="col-md-4"></div>
+</div>

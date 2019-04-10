@@ -9,12 +9,15 @@ import { EmployeeComponent } from '../components/employee/employee.component';
 import { ApprovedRequestManagementComponent } from '../components/request/approved/approved-request-mgmt.component';
 import { PendingRequestManagementComponent } from '../components/request/pending/pending-request-mgmt.component';
 import { RequestComponent } from '../components/request/request.component';
+import { DepartmentComponent } from '../components/department/department.component';
+import { PositionComponent } from '../components/position/position.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'departments', component: DepartmentManagementComponent },
     { path: 'positions', component: PositionManagementComponent },
+    { path: 'positions/add', component: PositionComponent },
     { path: 'employees/current', component: EmployeeManagementComponent },
     { path: 'employees/former', component: EmployeeManagementComponent },
     { path: 'requests/my', component: MyRequestManagementComponent },
@@ -22,6 +25,7 @@ const appRoutes: Routes = [
     { path: 'requests/pending', component: PendingRequestManagementComponent },
     { path: 'requests/add', component: RequestComponent },
     { path: 'employees/add', component: EmployeeComponent },
+    { path: 'departments/add', component: DepartmentComponent },
     { path: '**', redirectTo: '/home' }
 ]
 
