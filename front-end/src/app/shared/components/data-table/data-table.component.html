@@ -1,16 +1,16 @@
  <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Employees Count</th>
+      <th *ngFor="let key of objectKeys(columns)" scope="col">{{columns[key]}}</th>
       <th *ngIf="isAdmin"></th>
-      <th *ngIf="isAdmin"> </th>
+      <th *ngIf="isAdmin"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of data">
-      <td>{{data.name}}</td>
-      <td>{{data.employeesCount}}</td>
+      <td *ngFor="let key of objectKeys(item)">
+        <span *ngIf="isVisible(key)">{{item[key]}}</span>
+      </td>
       <td *ngIf="isAdmin">
         <button class="btn btn-warning">Edit</button>
       </td>

@@ -11,6 +11,7 @@ import { BaseComponent } from '../../shared/components/base.component';
 
 export class DepartmentManagementComponent extends BaseComponent implements OnInit {
   departments: Department[] = []
+  columns: {} = { name: 'Name', employeesCount: 'Employees Count'}
 
   constructor(public store: Store<State>) {
     super(store)

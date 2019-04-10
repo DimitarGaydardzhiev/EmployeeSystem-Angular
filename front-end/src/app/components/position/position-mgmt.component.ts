@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State, getPositions } from '../../core/store/reducers';
 import { BaseComponent } from '../../shared/components/base.component';
@@ -7,10 +7,12 @@ import { Position } from '../../core/models/position/position.model';
 
 @Component({
   templateUrl: './position-mgmt.component.html',
+  changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class PositionManagementComponent extends BaseComponent implements OnInit {
   positions: Position[] = []
+  columns: {} = { name: 'Name', employeesCount: 'Employees Count'}
 
   constructor(public store: Store<State>) {
     super(store)
