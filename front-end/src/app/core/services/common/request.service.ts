@@ -25,4 +25,10 @@ export class RequestService {
 
     return this.apiService.get(resourceUrl);
   }
+
+  getRequestTypes(): Observable<any> {
+    const resourceUrl = `${this.object}/GetRequestTypes`
+
+    return this.apiService.get(resourceUrl);
+  }
 }

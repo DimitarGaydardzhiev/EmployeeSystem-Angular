@@ -1,16 +1,19 @@
 import * as request from '../actions/request.actions'
 import { Request } from '../../models/request/request.model';
+import { BaseModel } from '../../models';
 
 export interface State {
   requests: Request[]
   approvedRequests: Request[]
   pendingRequests: Request[]
+  requestTypes: BaseModel[]
 }
 
 const initialState: State = {
   requests: [],
   approvedRequests: [],
-  pendingRequests: []
+  pendingRequests: [],
+  requestTypes: []
 }
 
 export function reducer(state = initialState, action: request.Actions): State {
@@ -39,6 +42,14 @@ export function reducer(state = initialState, action: request.Actions): State {
     case request.ActionTypes.GET_PENDING_REQUESTS_FAIL: {
       return Object.assign({}, initialState)
     }
+    case request.ActionTypes.GET_REQUEST_TYPES_SUCCESS: {
+      return Object.assign({}, state, {
+        requestTypes: [...action.payload]
+      });
+    }
+    case request.ActionTypes.GET_REQUEST_TYPES_FAIL: {
+      return Object.assign({}, initialState)
+    }
     default: {
       return state;
     }
@@ -48,3 +59,4 @@ export function reducer(state = initialState, action: request.Actions): State {
 export const getMyRequests = (state: State) => state.requests
 export const getApprovedRequests = (state: State) => state.approvedRequests
 export const getPendingRequests = (state: State) => state.pendingRequests
+export const getRequestTypes = (state: State) => state.requestTypes

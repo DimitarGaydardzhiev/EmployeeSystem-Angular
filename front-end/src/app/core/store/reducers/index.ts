@@ -54,6 +54,7 @@ export const getRequestsState = createFeatureSelector<Requests.State>('requests'
 export const getMyRequests = createSelector(getRequestsState, Requests.getMyRequests)
 export const getApprovedRequests = createSelector(getRequestsState, Requests.getApprovedRequests)
 export const getPendingRequests = createSelector(getRequestsState, Requests.getPendingRequests)
+export const getRequestTypes = createSelector(getRequestsState, Requests.getRequestTypes)
 
 export const getRolesState = createFeatureSelector<Roles.State>('roles')
 export const getAllRoles = createSelector(getRolesState, Roles.getAllRoles)

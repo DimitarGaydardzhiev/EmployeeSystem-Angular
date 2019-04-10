@@ -3,8 +3,9 @@ import { RequestType } from "./request-type";
 
 export class Request extends BaseModel {
   requestType: RequestType
-  from: Date
-  to: Date
+  from: any
+  to: any
   isApproved: boolean
   description: string
+  requestTypeId: number
 }

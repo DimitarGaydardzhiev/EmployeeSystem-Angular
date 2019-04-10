@@ -8,6 +8,7 @@ import { MyRequestManagementComponent } from '../components/request/my/my-reques
 import { EmployeeComponent } from '../components/employee/employee.component';
 import { ApprovedRequestManagementComponent } from '../components/request/approved/approved-request-mgmt.component';
 import { PendingRequestManagementComponent } from '../components/request/pending/pending-request-mgmt.component';
+import { RequestComponent } from '../components/request/request.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     { path: 'requests/my', component: MyRequestManagementComponent },
     { path: 'requests/approved', component: ApprovedRequestManagementComponent },
     { path: 'requests/pending', component: PendingRequestManagementComponent },
+    { path: 'requests/add', component: RequestComponent },
     { path: 'employees/add', component: EmployeeComponent },
     { path: '**', redirectTo: '/home' }
 ]

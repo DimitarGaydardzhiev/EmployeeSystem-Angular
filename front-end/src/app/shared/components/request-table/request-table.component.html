@@ -1,26 +1,28 @@
 <div class="row">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Request Type</th>
-          <th scope="col">From</th>
-          <th scope="col">To</th>
-          <th scope="col">Is Approved</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of requests">
-          <td>{{item.requestType}}</td>
-          <td>{{item.from}}</td>
-          <td>{{item.to}}</td>
-          <td [ngClass]="{'text-danger':!item.isApproved,
-            'text-success':item.isApproved}">{{item.isApproved}}</td>
-          <td>{{item.description}}</td>
-          <td *ngIf="btnLabel">
-            <button [ngClass]="btnClass">{{btnLabel}}</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">User</th>
+        <th scope="col">Request Type</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Is Approved</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of requests">
+        <td>{{item.user}}</td>
+        <td>{{item.requestType}}</td>
+        <td>{{item.from | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.to | date: 'dd/MM/yyyy'}}</td>
+        <td [ngClass]="{'text-danger':!item.isApproved,
+          'text-success':item.isApproved}">{{item.isApproved}}</td>
+        <td>{{item.description}}</td>
+        <td *ngIf="btnLabel">
+          <button [ngClass]="btnClass">{{btnLabel}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

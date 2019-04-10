@@ -2,7 +2,9 @@ import { Injectable } from "@angular/core";
 import { Effect, Actions, ofType } from "@ngrx/effects";
 import {
   ActionTypes, GetMyRequestsActionSuccess, GetMyRequestsActionFail,
-  GetApprovedRequestsActionSuccess, GetApprovedRequestsActionFail, GetPendingRequestsActionSuccess, GetPendingRequestsActionFail
+  GetApprovedRequestsActionSuccess,
+  GetApprovedRequestsActionFail,
+  GetPendingRequestsActionSuccess, GetPendingRequestsActionFail, GetRequestTypesActionSuccess, GetRequestTypesActionFail
 } from "../actions/request.actions";
 import { Observable } from "rxjs/Observable";
 import { RequestService } from "../../services";
@@ -29,12 +31,21 @@ export class RequestEffects {
       })
     )
 
-    @Effect() getPendingRequests = this.actions
-      .pipe(ofType(ActionTypes.GET_PENDING_REQUESTS))
-      .switchMap(() => this.service.pendingRequests()
-        .map(res => new GetPendingRequestsActionSuccess(res))
-        .catch((err) => {
-          return Observable.of(new GetPendingRequestsActionFail(err));
-        })
-      )
+  @Effect() getPendingRequests = this.actions
+    .pipe(ofType(ActionTypes.GET_PENDING_REQUESTS))
+    .switchMap(() => this.service.pendingRequests()
+      .map(res => new GetPendingRequestsActionSuccess(res))
+      .catch((err) => {
+        return Observable.of(new GetPendingRequestsActionFail(err));
+      })
+    )
+
+  @Effect() getRequestTypes = this.actions
+    .pipe(ofType(ActionTypes.GET_REQUEST_TYPES))
+    .switchMap(() => this.service.getRequestTypes()
+      .map(res => new GetRequestTypesActionSuccess(res))
+      .catch((err) => {
+        return Observable.of(new GetRequestTypesActionFail(err));
+      })
+    )
 }

@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { BaseModel } from '../../models';
 
 export const ActionTypes = {
     GET_MY_REQUESTS: "GET_MY_REQUESTS",
@@ -11,7 +12,11 @@ export const ActionTypes = {
 
     GET_PENDING_REQUESTS: "GET_PENDING_REQUESTS",
     GET_PENDING_REQUESTS_SUCCESS: "GET_PENDING_REQUESTS_SUCCESS",
-    GET_PENDING_REQUESTS_FAIL: "GET_PENDING_REQUESTS_FAIL"
+    GET_PENDING_REQUESTS_FAIL: "GET_PENDING_REQUESTS_FAIL",
+
+    GET_REQUEST_TYPES: "GET_REQUEST_TYPES",
+    GET_REQUEST_TYPES_SUCCESS: "GET_REQUEST_TYPES_SUCCESS",
+    GET_REQUEST_TYPES_FAIL: "GET_REQUEST_TYPES_FAIL"
 }
 
 export class GetMyRequestsAction implements Action {
@@ -68,6 +73,24 @@ export class GetPendingRequestsActionFail implements Action {
     constructor(public payload: any) { }
 }
 
+export class GetRequestTypesAction implements Action {
+    type = ActionTypes.GET_REQUEST_TYPES
+
+    constructor(public payload: any = null) { }
+}
+
+export class GetRequestTypesActionSuccess implements Action {
+    type = ActionTypes.GET_REQUEST_TYPES_SUCCESS
+
+    constructor(public payload: BaseModel[]) { }
+}
+
+export class GetRequestTypesActionFail implements Action {
+    type = ActionTypes.GET_REQUEST_TYPES_FAIL
+
+    constructor(public payload: any) { }
+}
+
 export type Actions
     = GetMyRequestsAction
     | GetMyRequestsActionSuccess
@@ -80,3 +103,7 @@ export type Actions
     | GetPendingRequestsAction
     | GetPendingRequestsActionSuccess
     | GetPendingRequestsActionFail
+
+    | GetRequestTypesAction
+    | GetRequestTypesActionSuccess
+    | GetRequestTypesActionFail

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './components/app/app.component';
 import { SharedModule } from './shared';
 import { routing } from './shared/app.routing';
@@ -22,6 +21,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApprovedRequestManagementComponent } from './components/request/approved/approved-request-mgmt.component';
 import { PendingRequestManagementComponent } from './components/request/pending/pending-request-mgmt.component';
+import { RequestComponent } from './components/request/request.component';
 
 
 @NgModule({
@@ -36,7 +36,8 @@ import { PendingRequestManagementComponent } from './components/request/pending/
     MyRequestManagementComponent,
     EmployeeComponent,
     ApprovedRequestManagementComponent,
-    PendingRequestManagementComponent
+    PendingRequestManagementComponent,
+    RequestComponent
   ],
   // other modules
   imports: [
