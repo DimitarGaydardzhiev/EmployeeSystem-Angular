@@ -39,8 +39,8 @@ namespace ServiceLayer.Services
         {
             var position = repository.All().FirstOrDefault(p => p.Name == model.Name);
 
-            if (position != null)
-                throw new Exception(ErrorMessages.ObjectAlreadyAddedMessage);
+            //if (position != null)
+            //    throw new Exception(ErrorMessages.ObjectAlreadyAddedMessage);
 
             var result = repository.FindOrCreate(model.Id);
 

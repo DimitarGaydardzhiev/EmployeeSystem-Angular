@@ -45,6 +45,9 @@ export const getDepartments = createSelector(getDepartmentsState, Departments.ge
 
 export const getPositionsState = createFeatureSelector<Positions.State>('positions')
 export const getPositions = createSelector(getPositionsState, Positions.getPositions)
+export const getPositionById = createSelector(getPositionsState, (state, params) => {
+    return state.positions.find(p => p.id === params.id)
+})
 
 export const getEmployeesState = createFeatureSelector<Employees.State>('employees')
 export const getCurrentEmployees = createSelector(getEmployeesState, Employees.getCurrentEmployees)
