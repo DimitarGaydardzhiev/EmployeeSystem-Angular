@@ -1,21 +1,21 @@
 <div class="row">
   <ul class="center home-card-list">
     <li>
-      <home-card [disableLink]="!isLoggedIn" [title]="'Positions'"
+      <home-card [title]="'Positions'"
         [btnTitle]="'Explore
         Positions'" [description]="'Description'" [route]="'positions'"
         (routeChange)="navigate($event)"></home-card>
     </li>
     <li>
-      <home-card [disableLink]="!isLoggedIn" [title]="'Departments'"
+      <home-card [title]="'Departments'"
         [btnTitle]="'Explore
         Departments'" [description]="'Description'" [route]="'departments'"
         (routeChange)="navigate($event)"></home-card>
     </li>
     <li>
-      <home-card [disableLink]="isLoggedIn" [title]="'Employees'"
+      <home-card [disableLink]="!isLoggedIn" [title]="'Employees'"
         [btnTitle]="'Explore
-        Employees'" [description]="'Description'" [route]="'employees'"
+        Employees'" [description]="'Description'" [route]="'employees/current'"
         (routeChange)="navigate($event)"></home-card>
     </li>
   </ul>

@@ -1,4 +1,4 @@
 <data-table [columns]='columns' [data]='departments' [isAdmin]='isAdmin' [object]="'Department'"></data-table>
-<div class="row">
+<div *ngIf="isAdmin" class="row">
     <button class="btn btn-info" (click)="addDepartment()">Add New</button>
 </div>
