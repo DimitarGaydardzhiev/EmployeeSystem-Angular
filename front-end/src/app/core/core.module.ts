@@ -6,6 +6,7 @@ import {
     AuthService, ApiService, DepartmentService, PositionService,
     EmployeeService, RequestService, CommonService, ToastrService
 } from "./services";
+import { AuthGuard, AdminGuard, BaseGuard } from "./guards";
 @NgModule({
     imports: [
         CommonModule,
@@ -23,7 +24,10 @@ import {
         EmployeeService,
         RequestService,
         CommonService,
-        ToastrService
+        ToastrService,
+        BaseGuard,
+        AuthGuard,
+        AdminGuard
     ]
 })
 

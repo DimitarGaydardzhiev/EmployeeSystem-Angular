@@ -11,23 +11,24 @@ import { PendingRequestManagementComponent } from '../components/request/pending
 import { RequestComponent } from '../components/request/request.component';
 import { DepartmentComponent } from '../components/department/department.component';
 import { PositionComponent } from '../components/position/position.component';
+import { AuthGuard, AdminGuard } from '../core/guards';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'departments', component: DepartmentManagementComponent },
     { path: 'positions', component: PositionManagementComponent },
-    { path: 'positions/add', component: PositionComponent },
-    { path: 'positions/:id', component: PositionComponent },
+    { path: 'positions/add', component: PositionComponent, canActivate: [AdminGuard] },
+    { path: 'positions/:id', component: PositionComponent, canActivate: [AdminGuard] },
     { path: 'employees/current', component: EmployeeManagementComponent },
     { path: 'employees/former', component: EmployeeManagementComponent },
-    { path: 'requests/my', component: MyRequestManagementComponent },
-    { path: 'requests/approved', component: ApprovedRequestManagementComponent },
-    { path: 'requests/pending', component: PendingRequestManagementComponent },
-    { path: 'requests/add', component: RequestComponent },
-    { path: 'employees/add', component: EmployeeComponent },
-    { path: 'departments/add', component: DepartmentComponent },
-    { path: 'departments/:id', component: DepartmentComponent },
+    { path: 'requests/my', component: MyRequestManagementComponent, canActivate: [AuthGuard] },
+    { path: 'requests/approved', component: ApprovedRequestManagementComponent, canActivate: [AdminGuard] },
+    { path: 'requests/pending', component: PendingRequestManagementComponent, canActivate: [AdminGuard] },
+    { path: 'requests/add', component: RequestComponent, canActivate: [AuthGuard] },
+    { path: 'employees/add', component: EmployeeComponent, canActivate: [AdminGuard] },
+    { path: 'departments/add', component: DepartmentComponent, canActivate: [AdminGuard] },
+    { path: 'departments/:id', component: DepartmentComponent, canActivate: [AdminGuard] },
     { path: '**', redirectTo: '/home' }
 ]
 
