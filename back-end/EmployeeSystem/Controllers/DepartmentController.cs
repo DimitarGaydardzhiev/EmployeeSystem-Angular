@@ -64,7 +64,7 @@ namespace EmployeeSystem.Controllers
             return BadRequest(string.Join(Environment.NewLine, ModelState.SelectMany(e => e.Value.Errors.Select(er => er.ErrorMessage))));
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Authorize(Roles = "administrator")]
         [Route("{id}")]
         public IActionResult Delete(int id)

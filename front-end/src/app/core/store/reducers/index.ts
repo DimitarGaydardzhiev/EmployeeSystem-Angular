@@ -42,6 +42,9 @@ export const getLoaderStatus = createSelector(getLoadingMaskState, Loader.getLoa
 
 export const getDepartmentsState = createFeatureSelector<Departments.State>('departments')
 export const getDepartments = createSelector(getDepartmentsState, Departments.getDepartments)
+export const getDepartmentById = createSelector(getDepartmentsState, (state, params) => {
+    return state.departments.find(d => d.id === params.id)
+})
 
 export const getPositionsState = createFeatureSelector<Positions.State>('positions')
 export const getPositions = createSelector(getPositionsState, Positions.getPositions)

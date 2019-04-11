@@ -27,6 +27,7 @@ const appRoutes: Routes = [
     { path: 'requests/add', component: RequestComponent },
     { path: 'employees/add', component: EmployeeComponent },
     { path: 'departments/add', component: DepartmentComponent },
+    { path: 'departments/:id', component: DepartmentComponent },
     { path: '**', redirectTo: '/home' }
 ]
 

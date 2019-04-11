@@ -15,7 +15,7 @@
         <button class="btn btn-warning" (click)="edit(item.id)">Edit</button>
       </td>
       <td *ngIf="isAdmin">
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
       </td>
     </tr>
   </tbody>

@@ -12,6 +12,12 @@ export class CommonService {
     return this.apiService.post(resourceUrl, model);
   }
 
+  delete(model): Observable<any> {
+    const resourceUrl = `${model.object}/Delete/${model.id}`
+
+    return this.apiService.delete(resourceUrl);
+  }
+
   getById(objectType, id): Observable<any> {
     const resourceUrl = `${objectType}/GetById/${id}`
 

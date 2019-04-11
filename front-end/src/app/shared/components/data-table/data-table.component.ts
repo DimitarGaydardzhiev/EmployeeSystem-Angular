@@ -1,6 +1,9 @@
 import { Component, Input, AfterViewInit, OnInit, OnChanges, SimpleChange } from '@angular/core'
 import { BehaviorSubject } from 'rxjs-compat';
 import { Router } from '@angular/router';
+import { State } from '../../../core/store/reducers';
+import { Store } from '@ngrx/store';
+import { DeleteAction } from '../../../core/store/actions/common.actions';
 
 @Component({
   selector: 'data-table',
@@ -10,11 +13,12 @@ import { Router } from '@angular/router';
 export class DataTableComponent {
   @Input() columns: string[]
   @Input() isAdmin: boolean
+  @Input() object: string
   // initialize a private variable _data, it's a BehaviorSubject
   private _data = new BehaviorSubject<any[]>([]);
   filteredData: any[]
   objectKeys = Object.keys
-  constructor(private router: Router) {
+  constructor(private store: Store<State>, private router: Router) {
 
   }
 
@@ -37,5 +41,10 @@ export class DataTableComponent {
   edit(id: number): void {
     const editUrl = `${this.router.url}/${id}`
     this.router.navigateByUrl(editUrl)
+  }
+
+  delete(id: number): void {
+    console.log(this.object)
+    this.store.dispatch(new DeleteAction({ object: this.object, id: id }))
   }
 }
