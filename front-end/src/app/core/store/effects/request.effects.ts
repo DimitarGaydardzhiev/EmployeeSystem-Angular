@@ -4,14 +4,27 @@ import {
   ActionTypes, GetMyRequestsActionSuccess, GetMyRequestsActionFail,
   GetApprovedRequestsActionSuccess,
   GetApprovedRequestsActionFail,
-  GetPendingRequestsActionSuccess, GetPendingRequestsActionFail, GetRequestTypesActionSuccess, GetRequestTypesActionFail
+  GetPendingRequestsActionSuccess,
+  GetPendingRequestsActionFail,
+  GetRequestTypesActionSuccess,
+  GetRequestTypesActionFail,
+  ApproveAction,
+  ApproveActionSuccess,
+  ApproveActionFail,
+  UnapproveAction,
+  UnapproveActionSuccess,
+  UnapproveActionFail,
+  GetApprovedRequestsAction,
+  GetPendingRequestsAction
 } from "../actions/request.actions";
 import { Observable } from "rxjs/Observable";
-import { RequestService } from "../../services";
+import { RequestService, ToastrService } from "../../services";
+import { Store } from "@ngrx/store";
+import { State } from "../reducers/role.reducers";
 
 @Injectable()
 export class RequestEffects {
-  constructor(private service: RequestService, private actions: Actions) { }
+  constructor(private service: RequestService, private actions: Actions, private store: Store<State>, private toastr: ToastrService) { }
 
   @Effect() getMyRequests = this.actions
     .pipe(ofType(ActionTypes.GET_MY_REQUESTS))
@@ -46,6 +59,32 @@ export class RequestEffects {
       .map(res => new GetRequestTypesActionSuccess(res))
       .catch((err) => {
         return Observable.of(new GetRequestTypesActionFail(err));
+      })
+    )
+
+  @Effect({ dispatch: false }) approveRequest = this.actions
+    .pipe(ofType<ApproveAction>(ActionTypes.APPROVE))
+    .switchMap(action => this.service.approveRequest(action.payload)
+      .map(res => {
+        this.toastr.success('Approve Successful!')
+        return this.store.dispatch(new GetPendingRequestsAction())
+      })
+      .catch((err) => {
+        this.toastr.error(err)
+        return Observable.of(new ApproveActionFail(err));
+      })
+    )
+
+  @Effect({ dispatch: false }) unapproveRequest = this.actions
+    .pipe(ofType<UnapproveAction>(ActionTypes.UNAPPROVE))
+    .switchMap(action => this.service.unapproveRequest(action.payload)
+      .map(res => {
+        this.toastr.success('Unapprove Successful!')
+        return this.store.dispatch(new GetApprovedRequestsAction())
+      })
+      .catch((err) => {
+        this.toastr.error(err)
+        return Observable.of(new UnapproveActionFail(err));
       })
     )
 }

@@ -18,9 +18,7 @@ export class DataTableComponent {
   private _data = new BehaviorSubject<any[]>([]);
   filteredData: any[]
   objectKeys = Object.keys
-  constructor(private store: Store<State>, private router: Router) {
-
-  }
+  constructor(private store: Store<State>, private router: Router) { }
 
   // change data to use getter and setter
   @Input()
@@ -44,7 +42,6 @@ export class DataTableComponent {
   }
 
   delete(id: number): void {
-    console.log(this.object)
     this.store.dispatch(new DeleteAction({ object: this.object, id: id }))
   }
 }

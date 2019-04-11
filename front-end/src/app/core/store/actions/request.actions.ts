@@ -16,7 +16,15 @@ export const ActionTypes = {
 
     GET_REQUEST_TYPES: "GET_REQUEST_TYPES",
     GET_REQUEST_TYPES_SUCCESS: "GET_REQUEST_TYPES_SUCCESS",
-    GET_REQUEST_TYPES_FAIL: "GET_REQUEST_TYPES_FAIL"
+    GET_REQUEST_TYPES_FAIL: "GET_REQUEST_TYPES_FAIL",
+
+    APPROVE: "APPROVE",
+    APPROVE_SUCCESS: "APPROVE_SUCCESS",
+    APPROVE_FAIL: "APPROVE_FAIL",
+
+    UNAPPROVE: "UNAPPROVE",
+    UNAPPROVE_SUCCESS: "UNAPPROVE_SUCCESS",
+    UNAPPROVE_FAIL: "UNAPPROVE_FAIL"
 }
 
 export class GetMyRequestsAction implements Action {
@@ -91,6 +99,42 @@ export class GetRequestTypesActionFail implements Action {
     constructor(public payload: any) { }
 }
 
+export class ApproveAction implements Action {
+    type = ActionTypes.APPROVE
+
+    constructor(public payload: number = null) { }
+}
+
+export class ApproveActionSuccess implements Action {
+    type = ActionTypes.APPROVE_SUCCESS
+
+    constructor(public payload: any) { }
+}
+
+export class ApproveActionFail implements Action {
+    type = ActionTypes.APPROVE_FAIL
+
+    constructor(public payload: any) { }
+}
+
+export class UnapproveAction implements Action {
+    type = ActionTypes.UNAPPROVE
+
+    constructor(public payload: number = null) { }
+}
+
+export class UnapproveActionSuccess implements Action {
+    type = ActionTypes.UNAPPROVE_SUCCESS
+
+    constructor(public payload: any) { }
+}
+
+export class UnapproveActionFail implements Action {
+    type = ActionTypes.UNAPPROVE_FAIL
+
+    constructor(public payload: any) { }
+}
+
 export type Actions
     = GetMyRequestsAction
     | GetMyRequestsActionSuccess
@@ -107,3 +151,11 @@ export type Actions
     | GetRequestTypesAction
     | GetRequestTypesActionSuccess
     | GetRequestTypesActionFail
+
+    | ApproveAction
+    | ApproveActionSuccess
+    | ApproveActionFail
+
+    | UnapproveAction
+    | UnapproveActionSuccess
+    | UnapproveActionFail

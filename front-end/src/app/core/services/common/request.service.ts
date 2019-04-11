@@ -31,4 +31,16 @@ export class RequestService {
 
     return this.apiService.get(resourceUrl);
   }
+
+  approveRequest(id): Observable<any> {
+    const resourceUrl = `${this.object}/Approve`
+
+    return this.apiService.post(resourceUrl, id);
+  }
+
+  unapproveRequest(id): Observable<any> {
+    const resourceUrl = `${this.object}/Unapprove`
+
+    return this.apiService.post(resourceUrl, id);
+  }
 }

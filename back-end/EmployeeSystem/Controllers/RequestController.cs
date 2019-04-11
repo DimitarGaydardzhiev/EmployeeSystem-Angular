@@ -89,8 +89,7 @@ namespace EmployeeSystem.Controllers
 
         [HttpPost]
         [Authorize(Roles = "administrator")]
-        [Route("{id}")]
-        public IActionResult Approve(int id)
+        public IActionResult Approve([FromBody] int id)
         {
             try
             {
@@ -105,8 +104,7 @@ namespace EmployeeSystem.Controllers
 
         [HttpPost]
         [Authorize(Roles = "administrator")]
-        [Route("{id}")]
-        public IActionResult Unapprove(int id)
+        public IActionResult Unapprove([FromBody] int id)
         {
             try
             {

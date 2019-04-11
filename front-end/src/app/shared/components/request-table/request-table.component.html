@@ -20,7 +20,7 @@
           'text-success':item.isApproved}">{{item.isApproved}}</td>
         <td>{{item.description}}</td>
         <td *ngIf="btnLabel">
-          <button [ngClass]="btnClass">{{btnLabel}}</button>
+          <button [ngClass]="btnClass" (click)="manageRequest(item)">{{btnLabel}}</button>
         </td>
       </tr>
     </tbody>
