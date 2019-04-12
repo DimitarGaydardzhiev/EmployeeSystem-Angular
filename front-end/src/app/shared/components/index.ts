@@ -10,6 +10,7 @@ import { DataTableComponent } from "./data-table/data-table.component";
 import { RequestTableComponent } from "./request-table/request-table.component";
 import { FormDateComponent } from "./forms/form-date/form-date.component";
 import { FormErrorComponent } from "./forms/form-error/form-error.component";
+import { FormSelectComponent } from "./forms/form-select/form-select.component";
 
 
 export const sharedComponents = [
@@ -24,5 +25,6 @@ export const sharedComponents = [
     FormTextareaComponent,
     RequestTableComponent,
     FormDateComponent,
-    FormErrorComponent
+    FormErrorComponent,
+    FormSelectComponent
 ]

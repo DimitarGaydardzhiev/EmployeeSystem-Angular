@@ -41,13 +41,9 @@
         </div>
       </div>
       <div>
-        <div class="form-group">
-          <label>Request Type</label>
-          <select class="form-control" [(ngModel)]="entity.requestTypeId">
-            <option class="form-control" *ngFor="let r of requestTypes"
-              [ngValue]="r.id">{{r.name}}</option>
-          </select>
-        </div>
+        <form-select [inputLabel]="'Request Type'"
+          [(ngModel)]="entity.requestTypeId"
+          [source]="requestTypes"></form-select>
       </div>
       <div>
         <form-textarea [(ngModel)]="entity.description"

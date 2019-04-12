@@ -34,31 +34,17 @@
           [minlength]="'6'"></form-input>
       </div>
       <div>
-        <div class="form-group">
-          <label>Role</label>
-          <select class="form-control" [(ngModel)]="entity.roleId">
-            <option class="form-control" *ngFor="let r of roles"
-              [ngValue]="r.id">{{r.name}}</option>
-          </select>
-        </div>
+        <form-select [inputLabel]="'Role'" [(ngModel)]="entity.roleId"
+          [source]="roles"></form-select>
       </div>
       <div>
-        <div class="form-group">
-          <label>Position</label>
-          <select class="form-control" [(ngModel)]="entity.positionId">
-            <option class="form-control" *ngFor="let p of positions"
-              [ngValue]="p.id">{{p.name}}</option>
-          </select>
-        </div>
+        <form-select [inputLabel]="'Position'" [(ngModel)]="entity.positionId"
+          [source]="positions"></form-select>
       </div>
       <div>
-        <div class="form-group">
-          <label>Department</label>
-          <select class="form-control" [(ngModel)]="entity.departmentid">
-            <option class="form-control" *ngFor="let d of departments"
-              [ngValue]="d.id">{{d.name}}</option>
-          </select>
-        </div>
+        <form-select [inputLabel]="'Department'"
+          [(ngModel)]="entity.departmentid"
+          [source]="departments"></form-select>
       </div>
       <div>
         <form-textarea [(ngModel)]="entity.description"
