@@ -18,6 +18,7 @@ export class BaseGuard implements OnDestroy {
       .subscribe(auth => {
         if (auth.user) {
           this.isLogged = auth.loggedIn
+          this.userRole = auth.user.role
         }
       })
   }

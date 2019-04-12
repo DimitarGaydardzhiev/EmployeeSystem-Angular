@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     ],
     exports: [
         NgbModule,
+        FormsModule,
         ...sharedComponents
     ],
     providers: []

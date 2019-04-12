@@ -1,0 +1,12 @@
+<div *ngIf="!model.valid && (model.dirty || model.touched)"
+  class="validation-alert text-danger">
+  <div *ngIf="model.errors.required">
+    {{inputLabel ? inputLabel : 'The field'}} is required.
+  </div>
+  <div *ngIf="model.errors.minlength">
+    {{inputLabel ? inputLabel : 'The field'}} must be minimum {{minlength}} characters long.
+  </div>
+  <div *ngIf="model.errors.maxlength">
+    {{inputLabel ? inputLabel : 'The field'}} must be maximum {{maxlength}} characters long.
+  </div>
+</div>

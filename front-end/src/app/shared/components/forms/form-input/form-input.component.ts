@@ -10,6 +10,6 @@ import { FormBaseComponent, MakeValueAccessorProviders } from '../form-base.comp
 })
 export class FormInputComponent extends FormBaseComponent {
   @Input() inputType: string
-  @Input() maxLength?: number
-  @Input() minLength?: number
+  @Input() maxlength?: number
+  @Input() minlength?: number
 }

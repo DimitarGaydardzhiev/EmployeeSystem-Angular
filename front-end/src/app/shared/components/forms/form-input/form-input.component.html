@@ -3,6 +3,9 @@
     {{inputLabel}}
   </label>
   <input class="form-control" [type]="inputType"
-    [(ngModel)]="value" [maxlength]="maxLength" [minlength]="minLength"
-    [placeholder]="placeHolder" [id]="id" />
+    [(ngModel)]="value" [maxlength]="maxlength" [minlength]="minlength"
+    [placeholder]="placeHolder" [id]="id" #item="ngModel" [required]="required"
+    ngDefaultControl />
+  <form-error [model]="item" [maxlength]="maxlength" [inputLabel]="inputLabel"
+    [minlength]="minlength"></form-error>
 </div>

@@ -1,5 +1,5 @@
-import { Component, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, Input, forwardRef, Injector } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'form-base',
@@ -9,10 +9,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class FormBaseComponent implements ControlValueAccessor {
   @Input() placeHolder: string = ''
   @Input() inputLabel: string
+  @Input() required: boolean
   @Input() id: string
   private onChangeCallback: (value: any) => {};
+  control: NgControl
   // private onTouchedCallback: (value: any) => {};
   private innerValue: any = '';
+
+  constructor(public injector: Injector) {
+  }
 
   // get accessor
   get value(): any {
@@ -47,9 +52,8 @@ export class FormBaseComponent implements ControlValueAccessor {
 
 export function MakeValueAccessorProviders(type: any) {
   return {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => type),
-      multi: true
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => type),
+    multi: true
   };
 }
-

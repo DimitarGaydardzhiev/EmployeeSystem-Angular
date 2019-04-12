@@ -8,7 +8,8 @@
     <data-form (submitForm)="onSubmit()">
       <div>
         <form-input [inputType]="'text'" [(ngModel)]="entity.name"
-          [inputLabel]="'Name'" [id]="'name'" ngDefaultControl></form-input>
+          [inputLabel]="'Name'" [id]="'name'" [required]="true"
+          [minlength]="'3'" [maxlength]="'10'"></form-input>
       </div>
     </data-form>
   </div>
