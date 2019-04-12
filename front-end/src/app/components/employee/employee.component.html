@@ -8,25 +8,30 @@
     <data-form (submitForm)="onSubmit()">
       <div>
         <form-input [inputType]="'text'" [(ngModel)]="entity.firstName"
-          [inputLabel]="'First Name'" [id]="'firstName'" ngDefaultControl></form-input>
+          [inputLabel]="'First Name'" [id]="'firstName'" [required]="true"
+          [minlength]="'3'"></form-input>
       </div>
       <div>
         <form-input [inputType]="'text'" [(ngModel)]="entity.lastName"
-          [inputLabel]="'Last Name'" [id]="'lastName'" ngDefaultControl></form-input>
+          [inputLabel]="'Last Name'" [id]="'lastName'" [required]="true"
+          [minlength]="'3'"></form-input>
       </div>
       <div>
         <form-input [inputType]="'text'" [(ngModel)]="entity.email"
-          [inputLabel]="'Email'" [id]="'email'" ngDefaultControl></form-input>
+          [inputLabel]="'Email'" [id]="'email'" [required]="true"
+          [minlength]="'7'"></form-input>
       </div>
       <div>
         <form-input [inputType]="'password'" [(ngModel)]="entity.password"
-          [inputLabel]="'Password'" [id]="'password'" ngDefaultControl></form-input>
+          [inputLabel]="'Password'" [id]="'password'" [required]="true"
+          [minlength]="'6'"></form-input>
       </div>
       <div>
         <form-input [inputType]="'password'"
           [(ngModel)]="entity.confirmPassword"
           [inputLabel]="'Confirm Password'" [id]="'confirmPassword'"
-          ngDefaultControl></form-input>
+          [required]="true"
+          [minlength]="'6'"></form-input>
       </div>
       <div>
         <div class="form-group">

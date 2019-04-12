@@ -32,11 +32,14 @@
                     Employees
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" routerLink="employees/current">Current Employees</a>
-                    <a class="dropdown-item" routerLink="employees/former">Former Employees</a>
+                    <a class="dropdown-item" routerLink="employees/current">Current
+                        Employees</a>
+                    <a class="dropdown-item" routerLink="employees/former">Former
+                        Employees</a>
                     <div *ngIf="isAdmin">
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" routerLink="employees/add">Add Employee</a>
+                        <a class="dropdown-item" routerLink="employees/add">Add
+                            Employee</a>
                     </div>
                 </div>
             </li>
@@ -47,12 +50,16 @@
                     Requests
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" routerLink="requests/my">My Requests</a>
+                    <a class="dropdown-item" routerLink="requests/my">My
+                        Requests</a>
+                    <a class="dropdown-item" routerLink="requests/add">New
+                        Request</a>
                     <div *ngIf="isAdmin">
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" routerLink="requests/add">New Request</a>
-                        <a class="dropdown-item" routerLink="requests/pending">Pending Requests</a>
-                        <a class="dropdown-item" routerLink="requests/approved">Approved Requests</a>
+                        <a class="dropdown-item" routerLink="requests/pending">Pending
+                            Requests</a>
+                        <a class="dropdown-item" routerLink="requests/approved">Approved
+                            Requests</a>
                     </div>
                 </div>
             </li>

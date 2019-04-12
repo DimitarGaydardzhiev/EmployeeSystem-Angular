@@ -44,5 +44,6 @@ export class AuthEffects {
         .do(() => {
             this.router.navigateByUrl('/home')
                 .then(() => window.location.reload())
+                .then(() => this.toastr.success("Logout successful!"))
         })
 }
