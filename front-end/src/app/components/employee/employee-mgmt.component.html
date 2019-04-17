@@ -23,10 +23,7 @@
         <td>{{item.department}}</td>
         <td>{{item.description}}</td>
         <td *ngIf="isAdmin && !areFormer">
-          <button class="btn btn-warning">Edit</button>
-        </td>
-        <td *ngIf="isAdmin && !areFormer">
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
         </td>
       </tr>
     </tbody>

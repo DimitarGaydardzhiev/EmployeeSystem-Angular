@@ -57,7 +57,7 @@ namespace EmployeeSystem.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Authorize(Roles = "administrator")]
         [Route("{id}")]
         public IActionResult Delete(int id)

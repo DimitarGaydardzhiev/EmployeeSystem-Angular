@@ -5,6 +5,7 @@ import { BaseComponent } from '../../shared/components/base.component';
 import { ActivatedRoute } from '@angular/router';
 import { GetAllEmployeesAction } from '../../core/store/actions/employee.actions';
 import { Employee } from '../../core/models/employee/employee.model';
+import { DeleteAction } from '../../core/store/actions/common.actions';
 
 @Component({
   templateUrl: './employee-mgmt.component.html',
@@ -31,6 +32,10 @@ export class EmployeeManagementComponent extends BaseComponent implements OnInit
         this.employees = state
       })
     }
+  }
+
+  delete(id: number): void {
+    this.store.dispatch(new DeleteAction({ object: "Employee", id: id }))
   }
 
   ngOnInit() {
