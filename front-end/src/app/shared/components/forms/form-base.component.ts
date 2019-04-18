@@ -11,7 +11,7 @@ export class FormBaseComponent implements ControlValueAccessor {
   @Input() inputLabel: string
   @Input() required: boolean
   @Input() id: string
-  private onChangeCallback: (value: any) => {};
+  // private onChangeCallback: (value: any) => {};
   control: NgControl
   // private onTouchedCallback: (value: any) => {};
   private innerValue: any = '';
@@ -46,6 +46,10 @@ export class FormBaseComponent implements ControlValueAccessor {
     return null
   }
   setDisabledState?(isDisabled: boolean): void {
+    return null
+  }
+
+  onChangeCallback(value) {
     return null
   }
 }
