@@ -7,50 +7,37 @@
   <div class="col-md-4">
     <data-form (submitForm)="onSubmit()">
       <div>
-        <form-input [inputType]="'text'" [(ngModel)]="entity.firstName"
-          [inputLabel]="'First Name'" [id]="'firstName'" [required]="true"
-          [minlength]="'3'"></form-input>
+        <form-input [inputType]="'text'" [(ngModel)]="entity.firstName" [inputLabel]="'First Name'" [id]="'firstName'"
+          [required]="true" [minlength]="'3'"></form-input>
       </div>
       <div>
-        <form-input [inputType]="'text'" [(ngModel)]="entity.lastName"
-          [inputLabel]="'Last Name'" [id]="'lastName'" [required]="true"
-          [minlength]="'3'"></form-input>
+        <form-input [inputType]="'text'" [(ngModel)]="entity.lastName" [inputLabel]="'Last Name'" [id]="'lastName'"
+          [required]="true" [minlength]="'3'"></form-input>
       </div>
       <div>
-        <form-input [inputType]="'text'" [(ngModel)]="entity.email"
-          [inputLabel]="'Email'" [id]="'email'" [required]="true"
+        <form-input [inputType]="'text'" [(ngModel)]="entity.email" [inputLabel]="'Email'" [id]="'email'" [required]="true"
           [minlength]="'7'"></form-input>
       </div>
       <div>
-        <form-input [inputType]="'password'" [(ngModel)]="entity.password"
-          [inputLabel]="'Password'" [id]="'password'" [required]="true"
-          [minlength]="'6'"></form-input>
+        <form-input [inputType]="'password'" [(ngModel)]="entity.password" [inputLabel]="'Password'" [id]="'password'"
+          [required]="true" [minlength]="'6'"></form-input>
       </div>
       <div>
-        <form-input [inputType]="'password'"
-          [(ngModel)]="entity.confirmPassword"
-          [inputLabel]="'Confirm Password'" [id]="'confirmPassword'"
-          [required]="true"
-          [minlength]="'6'"></form-input>
+        <form-input [inputType]="'password'" [(ngModel)]="entity.confirmPassword" [inputLabel]="'Confirm Password'"
+          [id]="'confirmPassword'" [required]="true" [minlength]="'6'"></form-input>
       </div>
       <div>
-        <form-select [inputLabel]="'Role'" [(ngModel)]="entity.roleId"
-          [source]="roles"></form-select>
+        <form-select [inputLabel]="'Role'" [(ngModel)]="entity.roleId" [source]="roles"></form-select>
       </div>
       <div>
-        <form-select [inputLabel]="'Position'" [(ngModel)]="entity.positionId"
-          [source]="positions"></form-select>
+        <form-select [inputLabel]="'Position'" [(ngModel)]="entity.positionId" [source]="positions"></form-select>
       </div>
       <div>
-        <form-select [inputLabel]="'Department'"
-          [(ngModel)]="entity.departmentid"
-          [source]="departments"></form-select>
+        <form-select [inputLabel]="'Department'" [(ngModel)]="entity.departmentid" [source]="departments"></form-select>
       </div>
       <div>
-        <form-textarea [(ngModel)]="entity.description"
-          [inputLabel]="'Personal Description'" [id]="'description'" [cols]='5'
-          [rows]='5'
-          ngDefaultControl></form-textarea>
+        <!-- <form-textarea [(ngModel)]="entity.description" [inputLabel]="'Personal Description'" [id]="'description'"
+          [cols]='5' [rows]='5'></form-textarea> -->
       </div>
     </data-form>
   </div>

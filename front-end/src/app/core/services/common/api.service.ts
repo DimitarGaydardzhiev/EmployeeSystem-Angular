@@ -60,10 +60,6 @@ export class ApiService {
         return this.executeHttpMethod('post', path, body);
     }
 
-    put(path: string, body): Observable<any> {
-        return this.executeHttpMethod('put', path, body);
-    }
-
     delete(path: string): Observable<any> {
         return this.executeHttpMethod('delete', path, null);
     }

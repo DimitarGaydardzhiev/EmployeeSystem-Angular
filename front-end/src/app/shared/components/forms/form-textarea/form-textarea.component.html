@@ -2,11 +2,8 @@
   <label *ngIf="inputLabel" [attr.for]="id">
     {{inputLabel}}
   </label>
-  <textarea
-    class='form-control'
-    [placeholder]="placeHolder" [id]="id"
-    [cols]='cols'
-    [rows]='rows'
-    [(ngModel)]="value">
+  <textarea class='form-control' [maxlength]="maxlength" [minlength]="minlength" [placeholder]="placeHolder" [id]="id"
+    [cols]='cols' [rows]='rows' [(ngModel)]="value" #item="ngModel" ngDefaultControl>
   </textarea>
+  <form-error [model]="item" [maxlength]="maxlength" [inputLabel]="inputLabel" [minlength]="minlength"></form-error>
 </div>

@@ -84,7 +84,7 @@ namespace EmployeeSystem.Controllers
                 var result = await service.Register(model);
                 if (result.Succeeded)
                 {
-                    return Ok();
+                    return Ok("employees/current");
                 }
                 else
                 {

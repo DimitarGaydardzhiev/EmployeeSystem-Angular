@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State, getApprovedRequests } from '../../../core/store/reducers';
-import { GetMyRequestsAction, GetApprovedRequestsAction } from '../../../core/store/actions/request.actions';
+import { GetApprovedRequestsAction } from '../../../core/store/actions/request.actions';
 import { Request } from '../../../core/models/request/request.model';
 import { BaseComponent } from '../../../shared/components/base.component';
 
@@ -30,5 +30,5 @@ export class ApprovedRequestManagementComponent extends BaseComponent implements
 
   ngOnInit(): void {
     this.store.dispatch(new GetApprovedRequestsAction())
-   }
+  }
 }

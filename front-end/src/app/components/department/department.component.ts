@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Department } from '../../core/models/department/department.model';
 import { Store } from '@ngrx/store';
 import { State, getDepartmentById } from '../../core/store/reducers/';
 import { SaveAction } from '../../core/store/actions/common.actions';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponent } from '../../shared/components/base.component';
+import { GetAllDepartmentsAction } from '../../core/store/actions/department.actions';
 
 @Component({
   templateUrl: './department.component.html',
 })
 
-export class DepartmentComponent extends BaseComponent {
+export class DepartmentComponent extends BaseComponent implements OnInit {
   entity: Department = new Department()
 
   constructor(public store: Store<State>, private route: ActivatedRoute) {
@@ -32,5 +33,9 @@ export class DepartmentComponent extends BaseComponent {
 
   onSubmit() {
     this.store.dispatch(new SaveAction(this.entity))
+  }
+
+  ngOnInit(): void {
+    this.store.dispatch(new GetAllDepartmentsAction())
   }
 }

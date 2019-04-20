@@ -62,7 +62,7 @@ namespace EmployeeSystem.Controllers
                 try
                 {
                     service.Save(model);
-                    return Ok();
+                    return Ok("requests/my");
                 }
                 catch (Exception e)
                 {

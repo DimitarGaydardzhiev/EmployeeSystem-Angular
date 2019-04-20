@@ -3,7 +3,7 @@ import * as decode from 'jwt-decode'
 
 export interface State {
     accessToken: string
-    user: { id: number, username: string, email: string, role: string, countryId: string }
+    user: { id: number, username: string, email: string, role: string }
     loggedIn: boolean
     redirectUrl: string
     exp: Date,
@@ -35,8 +35,7 @@ export function reducer(state = initialState, action: auth.Actions): State {
                     id: tokenPayload.id,
                     email: tokenPayload.sub,
                     role: tokenPayload.role,
-                    username: tokenPayload.username,
-                    countryId: tokenPayload.countryId
+                    username: tokenPayload.username
                 }
             })
         }

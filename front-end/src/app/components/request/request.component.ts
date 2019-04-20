@@ -22,6 +22,7 @@ export class RequestComponent extends BaseComponent implements OnInit {
 
     this.store.select(getRequestTypes).takeWhile(data => this.isAlive).subscribe(state => {
       this.requestTypes = state
+      this.entity.requestTypeId = 1
     })
   }
 

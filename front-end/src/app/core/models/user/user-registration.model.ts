@@ -3,7 +3,6 @@ export class UserRegistrationModel {
     username: string
     password: string
     confirmPassowrd: string
-    countryId: number
     countryName: string
     firstName: string
     lastName: string

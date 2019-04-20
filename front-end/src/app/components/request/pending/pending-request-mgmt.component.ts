@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State, getPendingRequests } from '../../../core/store/reducers';
-import { GetMyRequestsAction, GetPendingRequestsAction } from '../../../core/store/actions/request.actions';
+import { GetPendingRequestsAction } from '../../../core/store/actions/request.actions';
 import { Request } from '../../../core/models/request/request.model';
 import { BaseComponent } from '../../../shared/components/base.component';
 
