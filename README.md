@@ -1,7 +1,7 @@
 # EmployeeSystem-Angular
 SoftUni Angular Project
 ## Idea ##
-Application for managing company information like employees, projects, departments and positions. Creating different kind of requests and approve/unapprove functionality by the admins.
+Application for managing company information like employees, departments and positions. Creating different kind of requests and approve/unapprove functionality by the admins.
 
 ## Design ##
 - **Administration**
@@ -25,14 +25,12 @@ There are two roles available, with the following permissions:
 	- View all positions
 	- View all current and former employees
 	- View his/her own requests and create a new ones
-	- View all projects and his/her own projects
 	- View his/her own profile info
 - **administrator** - can perform all of the user actions and also:
 	- Add new departments and positions
 	- Register new employees
 	- View pending and approved requests
 	- Approve/unapprove requests
-	- Add new projects and assign users to them
 
 **Not authorized users are able to see only positions and departments sections*
 
