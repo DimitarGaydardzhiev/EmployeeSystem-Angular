@@ -1,14 +1,17 @@
 import * as employee from '../actions/employee.actions'
 import { Employee } from '../../models/employee/employee.model';
+import { ProfileInfo } from '../../models/employee/profile-info';
 
 export interface State {
   currentEmployees: Employee[],
-  formerEmployees: Employee[]
+  formerEmployees: Employee[],
+  profileInfo: ProfileInfo
 }
 
 const initialState: State = {
   currentEmployees: [],
-  formerEmployees: []
+  formerEmployees: [],
+  profileInfo: new ProfileInfo()
 }
 
 export function reducer(state = initialState, action: employee.Actions): State {
@@ -33,6 +36,16 @@ export function reducer(state = initialState, action: employee.Actions): State {
         formerEmployees: initialState.formerEmployees
       });
     }
+    case employee.ActionTypes.GET_PROFILE_INFO_SUCCESS: {
+      return Object.assign({}, state, {
+        profileInfo: action.payload
+      });
+    }
+    case employee.ActionTypes.GET_PROFILE_INFO_FAIL: {
+      return Object.assign({}, state, {
+        profileInfo: initialState.profileInfo
+      });
+    }
     default: {
       return state;
     }
@@ -41,3 +54,4 @@ export function reducer(state = initialState, action: employee.Actions): State {
 
 export const getCurrentEmployees = (state: State) => state.currentEmployees
 export const getFormerEmployees = (state: State) => state.formerEmployees
+export const getProfileInfo = (state: State) => state.profileInfo

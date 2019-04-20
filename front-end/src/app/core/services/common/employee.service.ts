@@ -25,4 +25,10 @@ export class EmployeeService {
 
     return this.apiService.get(resourceUrl);
   }
+
+  getProfileInfo(): Observable<any> {
+    const resourceUrl = `${this.object}/info`
+
+    return this.apiService.get(resourceUrl);
+  }
 }

@@ -16,7 +16,7 @@ export class AuthGuard extends BaseGuard implements CanActivate {
       return true
     }
 
-    this.toastr.error("Please login see this page!")
+    this.toastr.error("Please login to see this page!")
     this.router.navigate(['login'])
     return false
   }

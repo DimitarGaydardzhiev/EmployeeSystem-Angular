@@ -25,6 +25,7 @@ import { RequestComponent } from './components/request/request.component';
 import { ToastrModule } from 'ngx-toastr';
 import { DepartmentComponent } from './components/department/department.component';
 import { PositionComponent } from './components/position/position.component';
+import { ProfileComponent } from './components/employee/profile/profile.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { PositionComponent } from './components/position/position.component';
     PendingRequestManagementComponent,
     RequestComponent,
     DepartmentComponent,
-    PositionComponent
+    PositionComponent,
+    ProfileComponent
   ],
   // other modules
   imports: [

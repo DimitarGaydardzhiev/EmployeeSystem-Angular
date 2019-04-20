@@ -55,6 +55,7 @@ export const getPositionById = createSelector(getPositionsState, (state, params)
 export const getEmployeesState = createFeatureSelector<Employees.State>('employees')
 export const getCurrentEmployees = createSelector(getEmployeesState, Employees.getCurrentEmployees)
 export const getFormerEmployees = createSelector(getEmployeesState, Employees.getFormerEmployees)
+export const getProfileInfo = createSelector(getEmployeesState, Employees.getProfileInfo)
 
 export const getRequestsState = createFeatureSelector<Requests.State>('requests')
 export const getMyRequests = createSelector(getRequestsState, Requests.getMyRequests)

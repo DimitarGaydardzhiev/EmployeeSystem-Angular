@@ -12,6 +12,7 @@ import { RequestComponent } from '../components/request/request.component';
 import { DepartmentComponent } from '../components/department/department.component';
 import { PositionComponent } from '../components/position/position.component';
 import { AuthGuard, AdminGuard } from '../core/guards';
+import { ProfileComponent } from '../components/employee/profile/profile.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     { path: 'employees/add', component: EmployeeComponent, canActivate: [AdminGuard] },
     { path: 'departments/add', component: DepartmentComponent, canActivate: [AdminGuard] },
     { path: 'departments/:id', component: DepartmentComponent, canActivate: [AdminGuard] },
+    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: '**', redirectTo: '/home' }
 ]
 
