@@ -13,6 +13,7 @@ import { DepartmentComponent } from '../components/department/department.compone
 import { PositionComponent } from '../components/position/position.component';
 import { AuthGuard, AdminGuard } from '../core/guards';
 import { ProfileComponent } from '../components/employee/profile/profile.component';
+import { PageNotFoundComponent } from '../components/common/page-not-found.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
     { path: 'departments/add', component: DepartmentComponent, canActivate: [AdminGuard] },
     { path: 'departments/:id', component: DepartmentComponent, canActivate: [AdminGuard] },
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-    { path: '**', redirectTo: '/home' }
+    { path: '**', component: PageNotFoundComponent }
 ]
 
 export const routing = RouterModule.forRoot(appRoutes)

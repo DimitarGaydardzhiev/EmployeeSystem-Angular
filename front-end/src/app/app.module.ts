@@ -26,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { DepartmentComponent } from './components/department/department.component';
 import { PositionComponent } from './components/position/position.component';
 import { ProfileComponent } from './components/employee/profile/profile.component';
+import { PageNotFoundComponent } from './components/common/page-not-found.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ProfileComponent } from './components/employee/profile/profile.componen
     RequestComponent,
     DepartmentComponent,
     PositionComponent,
-    ProfileComponent
+    ProfileComponent,
+    PageNotFoundComponent
   ],
   // other modules
   imports: [
